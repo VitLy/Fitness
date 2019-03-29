@@ -1,4 +1,8 @@
-﻿namespace PresentationLayer
+﻿using Ninject.Modules;
+using Ninject.Planning.Bindings;
+using System.Collections.Generic;
+
+namespace PresentationLayer
 {
     public interface IAdapter
     {

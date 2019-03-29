@@ -1,6 +1,6 @@
-﻿using System;
-using Ninject;
+﻿using Ninject;
 using Ninject.Modules;
+using System;
 
 namespace PresentationLayer
 {
@@ -38,7 +38,7 @@ namespace PresentationLayer
         {
             var ninjectContainer = container as INinjectModule;
 
-            kernel = new StandardKernel(ninjectContainer) ??throw new ArgumentNullException("container can not be Null",nameof(container));
+            this.kernel = new StandardKernel(ninjectContainer) ??throw new ArgumentNullException("container can not be Null",nameof(container));
         }
     }
 }

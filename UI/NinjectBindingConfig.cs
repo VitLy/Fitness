@@ -10,27 +10,28 @@ namespace UI
     {
         public override void Load()
         {
-            this.Bind<ILogin, Login>();
-            this.Bind<IMainForm, MainForm>();
-            this.Bind<IBodyParam, BodyParam>();
-            this.Bind<IExercises, Exercises>();
-            this.Bind<ICategory, Categories>();
-            this.Bind<IAddModifyExercise, AddModifyExercise>();
-            this.Bind<IAddModifyCategory, AddModifyCategory>();
-            this.Bind<ITrainigProgram, TrainigPrograms>();
-            this.Bind<IAddModifyTrainigProgram, AddModifyTrainigProgram>();
-            this.Bind<ITrainingProgramHeadReposytory<TrainingProgramHead>, TrainigProgramHeadRepo>();
-            this.Bind<IAddTrainigProgramSpecRow, AddRowTrainigProgram>();
+            this.Bind<ILogin>().To<Login>();
 
-            this.Bind<IMessenger, WFUserMessenger>();
+            this.Bind<IMainForm>().To<MainForm>();
+            this.Bind<IBodyParam>().To<BodyParam>();
+            this.Bind<IExercises>().To<Exercises>();
+            this.Bind<ICategory>().To<Categories>();
+            this.Bind<IAddModifyExercise>().To<AddModifyExercise>();
+            this.Bind<IAddModifyCategory>().To<AddModifyCategory>();
+            this.Bind<ITrainigProgram>().To<TrainigPrograms>();
+            this.Bind<IAddModifyTrainigProgram>().To<AddModifyTrainigProgram>();
+            this.Bind<ITrainingProgramHeadReposytory<TrainingProgramHead>>().To<TrainigProgramHeadRepo>();
+            this.Bind<IAddTrainigProgramSpecRow>().To<AddRowTrainigProgram>();
 
-            this.Bind<BaseRepo<User>, UserRepo>();
-            this.Bind<IUserReposytory<User>, UserRepo>();
-            this.Bind<IBodyReposytory<Param>, BodyRepo>();
-            this.Bind<IExerciseReposytory<Exercise>, ExercisesRepo>();
-            this.Bind<ITrainigSpecReposytory<TrainingSpec>, TrainigSpecRepo>();
-            this.Bind<ICategoryReposytory<Category>, CategoryRepo>();
-            this.Bind<ISetReposytory<Set>, SetRepo>();
+            this.Bind<IMessenger>().To<WFUserMessenger>();
+
+            this.Bind<BaseRepo<User>>().To<UserRepo>();
+            this.Bind<IUserReposytory<User>>().To<UserRepo>();
+            this.Bind<IBodyReposytory<Param>>().To<BodyRepo>();
+            this.Bind<IExerciseReposytory<Exercise>>().To<ExercisesRepo>();
+            this.Bind<ITrainigSpecReposytory<TrainingSpec>>().To<TrainigSpecRepo>();
+            this.Bind<ICategoryReposytory<Category>>().To<CategoryRepo>();
+            this.Bind<ISetReposytory<Set>>().To<SetRepo>();
 
             this.Bind<LoginPresenter>().ToSelf();
             this.Bind<MainMenuPresenter>().ToSelf();
