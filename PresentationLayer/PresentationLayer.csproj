@@ -84,6 +84,7 @@
     <Compile Include="View\IBodyParam.cs" />
     <Compile Include="View\IAddModifyExercise.cs" />
     <Compile Include="View\ICategory.cs" />
+    <Compile Include="View\IDIContainer.cs" />
     <Compile Include="View\IExercises.cs" />
     <Compile Include="View\ILogin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

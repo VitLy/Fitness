@@ -1,10 +1,6 @@
 ﻿using DomainLayer.Model;
 using DomainLayer.Reposytory;
-using Initialize;
-using ServiceLayer;
 using System;
-using System.Data.Entity;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace PresentationLayer
@@ -41,24 +37,12 @@ namespace PresentationLayer
 
         private void View_ButtonOkClick(object sender, EventArgs e)
         {
-            InitalDB();
             if (userRepo.IsUserPresentDB(view.GetLogin(), view.GetPassword()))
             {
                 controller.GetInstanse<MainMenuPresenter>().Run();
                 view.Close();
             }
             else messenger.ShowMessageError("Operation Login", "Login or Password are incorrect");
-        }
-
-        private static void InitalDB()
-        {
-            Database.SetInitializer(new MyInitializerDB());
-
-            using (Context context = new Context())
-            {
-                var querry = from user in context.Users.ToList()
-                             select user;
-            }
         }
     }
 }

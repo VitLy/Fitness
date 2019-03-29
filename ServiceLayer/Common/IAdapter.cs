@@ -1,8 +1,10 @@
-﻿namespace PresentationLayer
+﻿using PresentationLayer;
+using System.Windows.Forms;
+
+namespace ServiceLayer.Commmon
 {
     public interface IAdapter
     {
-        void LoadConfig(IDIContainer container);
         void Registry<TInterface, TInstance>() where TInstance : class, TInterface;
         void RegistryInstance<TInstance>() where TInstance : class;
         void RegistryInstanceToConst<TInterface, TImplementation>(TImplementation implementation) where TImplementation:TInterface;

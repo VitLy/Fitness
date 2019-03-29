@@ -1,12 +1,16 @@
-﻿using System;
-using Ninject;
-using Ninject.Modules;
+﻿using Ninject;
 
-namespace PresentationLayer
+namespace ServiceLayer.Commmon
 {
-    public class NinjectAdapter : IAdapter
+    public class NinjectAdapter : IAdapter 
     {
-        private StandardKernel kernel = new StandardKernel();
+        private readonly StandardKernel kernel = new StandardKernel();
+        private global::UI.NinjectBindingConfig ninjectBindingConfig;
+
+        public NinjectAdapter(global::UI.NinjectBindingConfig ninjectBindingConfig)
+        {
+            this.ninjectBindingConfig = ninjectBindingConfig;
+        }
 
         public void Registry<TInterface, TInstance>() where TInstance : class, TInterface
         {
@@ -15,9 +19,9 @@ namespace PresentationLayer
 
         public void RegistryInstance<TInstance>() where TInstance : class
         {
-            kernel.Bind<TInstance>().ToSelf().InSingletonScope();
+           kernel.Bind<TInstance>().ToSelf().InSingletonScope();
         }
-
+        
         public TInstance GetInstanse<TInstance>()
         {
             return this.kernel.Get<TInstance>();
@@ -32,13 +36,6 @@ namespace PresentationLayer
             where TImplementation : TInterface
         {
             kernel.Bind<TInterface>().ToConstant(implementation).InSingletonScope();
-        }
-
-        public void LoadConfig(IDIContainer container)
-        {
-            var ninjectContainer = container as INinjectModule;
-
-            kernel = new StandardKernel(ninjectContainer) ??throw new ArgumentNullException("container can not be Null",nameof(container));
         }
     }
 }
