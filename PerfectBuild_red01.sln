@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Initialize", "Myinitializer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI", "UI\UI.csproj", "{8487700D-025B-4213-8028-2C9EB7DDDA3D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PresentationLayer.Tests", "PresentationLayerTests\PresentationLayer.Tests.csproj", "{190476A0-50DC-4E8B-8B4F-3CA6FA4D04ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceLayer.Tests", "ServiceLayer.Tests\ServiceLayer.Tests.csproj", "{26B1BB5D-D161-4E19-B574-974B85EF5D74}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{8487700D-025B-4213-8028-2C9EB7DDDA3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8487700D-025B-4213-8028-2C9EB7DDDA3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8487700D-025B-4213-8028-2C9EB7DDDA3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{190476A0-50DC-4E8B-8B4F-3CA6FA4D04ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{190476A0-50DC-4E8B-8B4F-3CA6FA4D04ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{190476A0-50DC-4E8B-8B4F-3CA6FA4D04ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{190476A0-50DC-4E8B-8B4F-3CA6FA4D04ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26B1BB5D-D161-4E19-B574-974B85EF5D74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26B1BB5D-D161-4E19-B574-974B85EF5D74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26B1BB5D-D161-4E19-B574-974B85EF5D74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26B1BB5D-D161-4E19-B574-974B85EF5D74}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

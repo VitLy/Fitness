@@ -1,7 +1,9 @@
-﻿namespace DomainLayer.Reposytory
+﻿using DomainLayer.Model;
+
+namespace DomainLayer.Reposytory
 {
     public interface IUserReposytory<TUser> : IReposytory<TUser>
     {
-        bool IsUserPresentDB(string user, string password);
+        User GetUserFromDB(string user, string password);
     }
 }

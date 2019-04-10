@@ -11,6 +11,7 @@ namespace PresentationLayer
         readonly ILogin view;
         readonly IUserReposytory<User> userRepo;
         readonly IMessenger messenger;
+        private User currentUser;
 
         public LoginPresenter(IController controller, ILogin view, IMessenger messenger, IUserReposytory<User> userReposytory)
         {
@@ -37,9 +38,12 @@ namespace PresentationLayer
 
         private void View_ButtonOkClick(object sender, EventArgs e)
         {
-            if (userRepo.IsUserPresentDB(view.GetLogin(), view.GetPassword()))
+            var user = userRepo.GetUserFromDB(view.GetLogin(), view.GetPassword());
+            if (user != null)
             {
-                controller.GetInstanse<MainMenuPresenter>().Run();
+                this.currentUser = user;
+                var instance = controller.GetInstanse<MainMenuPresenter>();
+                instance.Run();
                 view.Close();
             }
             else messenger.ShowMessageError("Operation Login", "Login or Password are incorrect");

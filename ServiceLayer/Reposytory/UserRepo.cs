@@ -11,12 +11,9 @@ namespace ServiceLayer.Reposytory
             Table = Context.Users;
         }
 
-        public bool IsUserPresentDB(string login, string password)
+        public User GetUserFromDB(string login, string password)
         {
-            var querry = (from users in Table
-                         where (users.Login == login & users.Password == password)
-                         select users).ToList();
-            return (querry.Capacity>0);
+            return Table.Where(x => (x.Login == login&x.Password==password)).FirstOrDefault();
         }
     }
 }

@@ -13,32 +13,32 @@ namespace UI
 
         public event EventHandler ButtonOkClick;
         public event EventHandler CheckboxChanged;
-              
+
         public string GetLogin()
         {
-            if (string.IsNullOrWhiteSpace(this.tbxUser.Text)) { }
-            return this.tbxUser.Text;
+            if (string.IsNullOrWhiteSpace(tbxUser.Text)) { }
+            return tbxUser.Text;
         }
 
         public string GetPassword()
         {
-            if (string.IsNullOrWhiteSpace(this.tbxPassword.Text)) { }
-            return this.tbxPassword.Text;
+            if (string.IsNullOrWhiteSpace(tbxPassword.Text)) { }
+            return tbxPassword.Text;
         }
 
         public bool GetShowPasswordFlag()
         {
-            return this.cbxIsShowPassword.Checked;
+            return cbxIsShowPassword.Checked;
         }
 
         public void SetViewPassword(bool flag)
         {
-            this.tbxPassword.UseSystemPasswordChar = flag;
+            tbxPassword.UseSystemPasswordChar = flag;
         }
 
         private void BtnCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void BtnOk_Click(object sender, EventArgs e)
@@ -50,11 +50,16 @@ namespace UI
         {
             CheckboxChanged?.Invoke(sender, e);
         }
-
+       
+        /// <summary>
+        /// Временный метод, для автоматического заполнения имени и пароля
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Login_Activated(object sender, EventArgs e)
         {
-            this.tbxUser.Text = "VitLy";
-            this.tbxPassword.Text = "19791979";
+            tbxUser.Text = "VitLy";
+            tbxPassword.Text = "19791979";
         }
     }
 }
